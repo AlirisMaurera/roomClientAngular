@@ -1,0 +1,33 @@
+<div class="container">
+<div class="card-body">
+    <h5 class="card-title">Create Room</h5>
+    <form >
+        <div class="form-group">
+            <label for="name">name</label>
+            <input type="text" class="form-control" id="name" [(ngModel)]="room.name" name="name">
+          </div>
+      
+          <div class="form-group">
+            <label for="name">date</label>
+            <input type="text" class="form-control" id="date" [(ngModel)]="room.date" name="date">
+          </div>
+      
+          <div class="form-group">
+            <label for="name">startHour</label>
+            <input type="text" class="form-control" id="startHour" [(ngModel)]="room.startHour" name="startHour">
+          </div>
+      
+          <div class="form-group">
+              <label for="name">endHour</label>
+              <input type="text" class="form-control" id="endHour" [(ngModel)]="room.endHour" name="endHour">
+            </div>
+
+          <button class="btn btn-success" role="button" (click)='create()' *ngIf="!room.id else elseBlock">Create</button>  
+          
+          <ng-template #elseBlock>
+          <button class="btn btn-success" role="button" (click)='update()'>Upgrade</button>
+        </ng-template>
+        </form>
+
+</div>
+</div>

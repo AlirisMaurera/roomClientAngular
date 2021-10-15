@@ -1,0 +1,29 @@
+<h1>{{ titulo }}</h1>
+<div class="container">
+
+<button class="btn btn-info" type="button" [routerLink]="['/rooms/add']">New Room</button>    
+<table class="table table-striped">
+    <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Date</th>
+          <th scope="col">StartHour</th>
+          <th scope="col">EndHour</th>
+          <th scope="col">Edit</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let room of rooms">
+          <th scope="row">{{room.id}}</th>
+          <td>{{room.name}}</td>
+          <td>{{room.date}}</td>
+          <td>{{room.startHour}}</td>
+          <td>{{room.endHour}}</td>
+          <td><button type="button" name="button" class="btn btn-primary" [routerLink]="['/rooms/add', room.id]">Edit</button></td>
+          <td><button class="btn btn-danger" (click)="delete(room)">Delete</button></td>
+        </tr>
+      </tbody>
+  </table>
+</div>
